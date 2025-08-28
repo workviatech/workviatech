@@ -3,607 +3,560 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WORKVIATECH - Premier Placement Consultancy</title>
+    <title>WORKVIATECH - Premium Quality Placement Solutions</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            scroll-behavior: smooth;
         }
         
-        .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://static.vecteezy.com/system/resources/previews/006/591/007/large_2x/abstract-modern-tech-of-programming-code-screen-developer-photo.jpg');
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://static.vecteezy.com/system/resources/previews/040/838/830/non_2x/ai-generated-luxury-office-interior-with-panoramic-window-and-city-view-photo.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            min-height: 100vh;
         }
         
-        .tech-bg-1 {
-            background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('https://thumbs.dreamstime.com/b/programming-code-abstract-technology-background-software-deve-developer-computer-script-96434780.jpg');
+        .services-section {
+            background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), 
+                        url('https://wallpapers.com/images/featured/hd-office-background-wwmb5ymdbjbjv689.jpg');
             background-size: cover;
             background-position: center;
         }
         
-        .tech-bg-2 {
-            background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), url('https://cdn.autonomous.ai/static/upload/images/common/upload/20201015/desk-setup-for-developers-and-programmers_47f55bd039c.jpg');
+        .testimonials-section {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://static.vecteezy.com/system/resources/previews/060/275/545/non_2x/effective-and-professional-team-collaboration-in-the-modern-office-setting-today-photo.jpg');
             background-size: cover;
             background-position: center;
         }
         
-        .tech-bg-3 {
-            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://thumbs.dreamstime.com/b/computer-showing-source-code-monitor-modern-office-night-large-displaying-data-processing-blurred-background-353368727.jpg');
+        .contact-section {
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+                        url('https://as1.ftcdn.net/jpg/05/01/05/02/1000_F_501050210_VlvQTP0RDnR7nMBLFuBj0t1h3w5ef2hm.jpg');
             background-size: cover;
             background-position: center;
         }
         
-        .office-bg {
-            background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('https://images.stockcake.com/public/8/4/9/8496ab55-25c7-4fde-a416-0d7bbc9478d7_large/tech-team-working-stockcake.jpg');
-            background-size: cover;
-            background-position: center;
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
-        .section-padding {
-            padding: 3rem 0;
-        }
-        
-        .card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            backdrop-filter: blur(5px);
-            background: rgba(255, 255, 255, 0.95);
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .text-gradient {
+        .gradient-text {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         
-        .gradient-overlay {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            animation: bounce 2s infinite;
         }
         
-        .navbar-bg {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
         }
         
-        .success-message {
+        .card-hover {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-image {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+        
+        @media (min-width: 768px) {
+            .logo-image {
+                width: 80px;
+                height: 80px;
+            }
+        }
+        
+        .mobile-menu {
             display: none;
-            padding: 1rem;
-            background: #10B981;
-            color: white;
-            border-radius: 0.5rem;
-            margin-top: 1rem;
         }
         
-        .error-message {
-            display: none;
-            padding: 1rem;
-            background: #EF4444;
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+        }
+        
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #667eea;
+        }
+        
+        .whatsapp-btn {
+            background: #25D366;
             color: white;
-            border-radius: 0.5rem;
-            margin-top: 1rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: scale(1.05);
+        }
+        
+        .section-padding {
+            padding: 5rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 3rem 0;
+            }
         }
     </style>
 </head>
-<body class="tech-bg-1">
+<body>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/917483702015" class="floating-whatsapp">
+        <div class="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </div>
+    </a>
+
     <!-- Header -->
-    <header class="navbar-bg shadow-lg sticky top-0 z-50">
+    <header class="bg-white shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <div class="flex items-center">
-                    <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mr-3">
-                        <i class="fas fa-briefcase text-white text-xl"></i>
-                    </div>
-                    <h1 class="text-3xl font-bold text-gray-800">WORKVIATECH</h1>
+                <div class="logo-container">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/a262228d5f12423121ea10d8c30c550b" alt="WORKVIATECH Logo" class="logo-image">
+                    <h1 class="text-2xl md:text-3xl font-bold text-gray-800">WORKVIATECH</h1>
                 </div>
-                <nav class="hidden md:flex space-x-8">
+                
+                <nav class="desktop-nav flex space-x-8">
                     <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300">Home</a>
                     <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300">About</a>
                     <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300">Services</a>
                     <a href="#testimonials" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300">Testimonials</a>
                     <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300">Contact</a>
                 </nav>
-                <div class="md:hidden">
-                    <i class="fas fa-bars text-gray-700 text-xl cursor-pointer"></i>
-                </div>
+                
+                <button class="md:hidden text-gray-700 text-xl" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <div class="mobile-menu mt-4 bg-white shadow-lg rounded-lg p-4" id="mobileMenu">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-blue-600">Home</a>
+                <a href="#about" class="block py-2 text-gray-700 hover:text-blue-600">About</a>
+                <a href="#services" class="block py-2 text-gray-700 hover:text-blue-600">Services</a>
+                <a href="#testimonials" class="block py-2 text-gray-700 hover:text-blue-600">Testimonials</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600">Contact</a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-bg text-white section-padding">
+    <section id="home" class="hero-section flex items-center justify-center text-white">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-5xl font-bold mb-6">Connecting Talent with Opportunity</h2>
-            <p class="text-xl mb-8 max-w-3xl mx-auto">WORKVIATECH is your premier placement consultancy, bridging the gap between exceptional talent and leading companies across diverse industries.</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
-                    <i class="fas fa-search mr-2"></i>Find Your Dream Job
-                </button>
-                <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition duration-300">
-                    <i class="fas fa-handshake mr-2"></i>Hire Top Talent
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section-padding tech-bg-2">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h3 class="text-4xl font-bold text-gray-800 mb-4">About <span class="text-gradient">WORKVIATECH</span></h3>
-                <p class="text-xl text-gray-800 max-w-3xl mx-auto font-medium">With years of expertise in talent acquisition and career development, we've successfully placed thousands of professionals in their ideal roles while helping companies build exceptional teams.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center card-hover p-8 rounded-xl">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-users text-blue-600 text-2xl"></i>
-                    </div>
-                    <h4 class="text-2xl font-semibold text-gray-800 mb-2">5000+</h4>
-                    <p class="text-gray-700 font-medium">Successful Placements</p>
-                </div>
-                
-                <div class="text-center card-hover p-8 rounded-xl">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-building text-green-600 text-2xl"></i>
-                    </div>
-                    <h4 class="text-2xl font-semibold text-gray-800 mb-2">500+</h4>
-                    <p class="text-gray-700 font-medium">Partner Companies</p>
-                </div>
-                
-                <div class="text-center card-hover p-8 rounded-xl">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-industry text-purple-600 text-2xl"></i>
-                    </div>
-                    <h4 class="text-2xl font-semibold text-gray-800 mb-2">25+</h4>
-                    <p class="text-gray-700 font-medium">Industries Covered</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="section-padding office-bg">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h3 class="text-4xl font-bold text-gray-800 mb-4">Our <span class="text-gradient">Services</span></h3>
-                <p class="text-xl text-gray-800 max-w-3xl mx-auto font-medium">Comprehensive placement solutions tailored for both job seekers and employers</p>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-12">
-                <!-- Job Seekers Services -->
-                <div class="card-hover rounded-xl shadow-lg p-8">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                            <i class="fas fa-user-tie text-blue-600 text-xl"></i>
-                        </div>
-                        <h4 class="text-2xl font-bold text-gray-800">For Job Seekers</h4>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                            <div>
-                                <h5 class="font-semibold text-gray-800">Career Consultation</h5>
-                                <p class="text-gray-700">Personalized career guidance and professional development</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                            <div>
-                                <h5 class="font-semibold text-gray-800">Resume Enhancement</h5>
-                                <p class="text-gray-700">Professional resume writing and optimization services</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                            <div>
-                                <h5 class="font-semibold text-gray-800">Interview Preparation</h5>
-                                <p class="text-gray-700">Comprehensive interview coaching and mock sessions</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                            <div>
-                                <h5 class="font-semibold text-gray-800">Job Matching</h5>
-                                <p class="text-gray-700">AI-powered matching with suitable job opportunities</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Employer Services -->
-                <div class="card-hover rounded-xl shadow-lg p-8">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
-                            <i class="fas fa-building text-purple-600 text-xl"></i>
-                        </div>
-                        <h4 class="text-2xl font-bold text-gray-800">For Employers</h4>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                            <div>
-                                <h5 class="font-semibold text-gray-800">Talent Acquisition</h5>
-                                <p class="text-gray-700">End-to-end recruitment solutions for all levels</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                            <div>
-                                <h5 class="font-semibold text-gray-800">Executive Search</h5>
-                                <p class="text-gray-700">Specialized leadership and C-suite recruitment</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                            <div>
-                                <h5 class="font-semibold text-gray-800">Bulk Hiring</h5>
-                                <p class="text-gray-700">Efficient large-scale recruitment campaigns</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                            <div>
-                                <h5 class="font-semibold text-gray-800">HR Consulting</h5>
-                                <p class="text-gray-700">Strategic HR advisory and process optimization</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section class="section-padding tech-bg-1">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h3 class="text-4xl font-bold text-gray-800 mb-4">Why Choose <span class="text-gradient">WORKVIATECH</span></h3>
-                <p class="text-xl text-gray-800 max-w-3xl mx-auto font-medium">Our commitment to excellence sets us apart in the placement consultancy industry</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center card-hover p-6 rounded-xl">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-clock text-blue-600 text-2xl"></i>
-                    </div>
-                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Quick Turnaround</h4>
-                    <p class="text-gray-700">Fast and efficient placement process with average 15-day closure</p>
-                </div>
-
-                <div class="text-center card-hover p-6 rounded-xl">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-award text-green-600 text-2xl"></i>
-                    </div>
-                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Quality Assurance</h4>
-                    <p class="text-gray-700">Rigorous screening process ensuring perfect candidate-role fit</p>
-                </div>
-
-                <div class="text-center card-hover p-6 rounded-xl">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-handshake text-purple-600 text-2xl"></i>
-                    </div>
-                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Personal Touch</h4>
-                    <p class="text-gray-700">Dedicated relationship managers for personalized service</p>
-                </div>
-
-                <div class="text-center card-hover p-6 rounded-xl">
-                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-chart-line text-red-600 text-2xl"></i>
-                    </div>
-                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Success Rate</h4>
-                    <p class="text-gray-700">Industry-leading 95% placement success rate and retention</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="section-padding tech-bg-3">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h3 class="text-4xl font-bold text-white mb-4">Client <span class="text-yellow-400">Testimonials</span></h3>
-                <p class="text-xl text-gray-200 max-w-3xl mx-auto">Hear what our satisfied clients have to say about our services</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card-hover rounded-xl shadow-lg p-8">
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 mb-6 italic">"WORKVIATECH helped me transition from a junior role to a senior management position. Their career guidance was invaluable, and the job they found perfectly matched my aspirations."</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-white font-semibold">PS</span>
-                        </div>
-                        <div>
-                            <h5 class="font-semibold text-gray-800">Priya Sharma</h5>
-                            <p class="text-gray-600 text-sm">Data Analyst</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-hover rounded-xl shadow-lg p-8">
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 mb-6 italic">"As an HR director, I've worked with many placement agencies. WORKVIATECH stands out for their understanding of our needs and quality of candidates they provide."</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-white font-semibold">RK</span>
-                        </div>
-                        <div>
-                            <h5 class="font-semibold text-gray-800">Rajesh Kumar</h5>
-                            <p class="text-gray-600 text-sm">Associate Engineer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-hover rounded-xl shadow-lg p-8">
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 mb-6 italic">"The team at WORKVIATECH not only found me a great job but also provided excellent interview preparation. I felt confident and ready for every opportunity they presented."</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-white font-semibold">AG</span>
-                        </div>
-                        <div>
-                            <h5 class="font-semibold text-gray-800">Anita Gupta</h5>
-                            <p class="text-gray-600 text-sm">Process Analyst</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Career Guidance Section -->
-    <section class="section-padding tech-bg-2">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h3 class="text-4xl font-bold text-gray-800 mb-4">Career <span class="text-gradient">Guidance</span></h3>
-                <p class="text-xl text-gray-800 max-w-3xl mx-auto font-medium">Expert insights and resources to accelerate your career growth</p>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="card-hover p-8 rounded-xl">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-6">Professional Development Resources</h4>
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1">
-                                <i class="fas fa-graduation-cap text-blue-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-gray-800 mb-2">Skill Assessment & Development</h5>
-                                <p class="text-gray-700">Comprehensive evaluation of your current skills and personalized development roadmap</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-1">
-                                <i class="fas fa-chart-line text-green-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-gray-800 mb-2">Market Insights</h5>
-                                <p class="text-gray-700">Industry trends, salary benchmarks, and emerging opportunities in your field</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-4 mt-1">
-                                <i class="fas fa-network-wired text-purple-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-gray-800 mb-2">Professional Networking</h5>
-                                <p class="text-gray-700">Connect with industry leaders and expand your professional network</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1">
-                                <i class="fas fa-lightbulb text-red-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-gray-800 mb-2">Career Strategy Planning</h5>
-                                <p class="text-gray-700">Strategic career planning sessions to define and achieve your professional goals</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gradient-overlay rounded-xl p-8 text-white">
-                    <h4 class="text-2xl font-bold mb-6">Ready to Accelerate Your Career?</h4>
-                    <p class="mb-6">Join thousands of professionals who have transformed their careers with WORKVIATECH's expert guidance and personalized approach.</p>
-                    
-                    <div class="space-y-4 mb-6">
-                        <div class="flex items-center">
-                            <i class="fas fa-phone mr-3"></i>
-                            <span>+91 74837 02015</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-envelope mr-3"></i>
-                            <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dcb4ae9cabb3aeb7aab5bda8b9bfb4f2bfb3b1">hr@workviatech.com</a></span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-calendar mr-3"></i>
-                            <span>Schedule a Free Consultation</span>
-                        </div>
-                    </div>
-
-                    <a href="https://wa.me/917483702015" target="_blank" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 w-full inline-block text-center">
-                        <i class="fas fa-rocket mr-2"></i>Start Your Journey Today
+            <div class="glass-effect rounded-3xl p-8 md:p-12 max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6">Connecting Talent with Opportunity</h2>
+                <p class="text-xl md:text-2xl mb-8 opacity-90">WORKVIATECH is your premier placement consultancy, bridging the gap between exceptional talent and leading companies across diverse industries.</p>
+                <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                    <a href="https://wa.me/917483702015?text=Hi, I'm looking for job opportunities" class="whatsapp-btn">
+                        <i class="fas fa-search"></i>Find Your Dream Job
+                    </a>
+                    <a href="https://wa.me/917483702015?text=Hi, I need to hire top talent" class="whatsapp-btn">
+                        <i class="fas fa-handshake"></i>Hire Top Talent
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section-padding office-bg">
+    <!-- About/Stats Section -->
+    <section id="about" class="section-padding bg-white">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h3 class="text-4xl font-bold text-gray-800 mb-4">Get In <span class="text-gradient">Touch</span></h3>
-                <p class="text-xl text-gray-800 max-w-3xl mx-auto font-medium">Ready to take the next step in your career journey? Contact us today for personalized assistance</p>
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">About <span class="gradient-text">WORKVIATECH</span></h3>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto">With years of expertise in talent acquisition and career development, we've successfully placed thousands of professionals in their ideal roles while helping companies build exceptional teams.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center card-hover bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl">
+                    <div class="stats-counter mb-4">5000+</div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Successful Placements</h4>
+                    <p class="text-gray-600">Professionals placed in their dream jobs</p>
+                </div>
+                
+                <div class="text-center card-hover bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-2xl">
+                    <div class="stats-counter mb-4">500+</div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Partner Companies</h4>
+                    <p class="text-gray-600">Trusted corporate partnerships</p>
+                </div>
+                
+                <div class="text-center card-hover bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl">
+                    <div class="stats-counter mb-4">25+</div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Industries Covered</h4>
+                    <p class="text-gray-600">Diverse industry expertise</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section section-padding">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Our <span class="gradient-text">Services</span></h3>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto">Comprehensive placement solutions tailored for both job seekers and employers</p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-12">
-                <div class="card-hover p-8 rounded-xl">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-6">Contact Information</h4>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                <!-- Job Seekers Services -->
+                <div class="bg-white rounded-3xl shadow-2xl p-8 card-hover">
+                    <div class="flex items-center mb-8">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mr-6">
+                            <i class="fas fa-user-tie text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-3xl font-bold text-gray-800">For Job Seekers</h4>
+                    </div>
                     
                     <div class="space-y-6">
                         <div class="flex items-start">
-                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fas fa-map-marker-alt text-blue-600"></i>
+                            <i class="fas fa-check-circle text-green-500 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h5 class="text-xl font-semibold text-gray-800 mb-2">Career Consultation</h5>
+                                <p class="text-gray-600">Personalized career guidance and professional development</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h5 class="text-xl font-semibold text-gray-800 mb-2">Resume Enhancement</h5>
+                                <p class="text-gray-600">Professional resume writing and optimization services</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h5 class="text-xl font-semibold text-gray-800 mb-2">Interview Preparation</h5>
+                                <p class="text-gray-600">Comprehensive interview coaching and mock sessions</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h5 class="text-xl font-semibold text-gray-800 mb-2">Job Matching</h5>
+                                <p class="text-gray-600">AI-powered matching with suitable job opportunities</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <a href="https://wa.me/917483702015?text=Hi, I need career consultation services" class="whatsapp-btn w-full justify-center">
+                            <i class="fab fa-whatsapp"></i>Get Career Help
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Employer Services -->
+                <div class="bg-white rounded-3xl shadow-2xl p-8 card-hover">
+                    <div class="flex items-center mb-8">
+                        <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mr-6">
+                            <i class="fas fa-building text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-3xl font-bold text-gray-800">For Employers</h4>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h5 class="text-xl font-semibold text-gray-800 mb-2">Talent Acquisition</h5>
+                                <p class="text-gray-600">End-to-end recruitment solutions for all levels</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h5 class="text-xl font-semibold text-gray-800 mb-2">Executive Search</h5>
+                                <p class="text-gray-600">Specialized leadership and C-suite recruitment</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h5 class="text-xl font-semibold text-gray-800 mb-2">Bulk Hiring</h5>
+                                <p class="text-gray-600">Efficient large-scale recruitment campaigns</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h5 class="text-xl font-semibold text-gray-800 mb-2">HR Consulting</h5>
+                                <p class="text-gray-600">Strategic HR advisory and process optimization</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <a href="https://wa.me/917483702015?text=Hi, I need recruitment services" class="whatsapp-btn w-full justify-center">
+                            <i class="fab fa-whatsapp"></i>Hire Talent
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Job Categories -->
+            <div class="text-center mb-12">
+                <h4 class="text-3xl font-bold text-gray-800 mb-8">Job Categories We Cover</h4>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-lg card-hover text-center">
+                        <i class="fas fa-laptop-code text-3xl text-blue-600 mb-4"></i>
+                        <p class="font-semibold text-gray-800">IT & Software</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg card-hover text-center">
+                        <i class="fas fa-chart-line text-3xl text-green-600 mb-4"></i>
+                        <p class="font-semibold text-gray-800">Finance</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg card-hover text-center">
+                        <i class="fas fa-heartbeat text-3xl text-red-600 mb-4"></i>
+                        <p class="font-semibold text-gray-800">Healthcare</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg card-hover text-center">
+                        <i class="fas fa-cogs text-3xl text-yellow-600 mb-4"></i>
+                        <p class="font-semibold text-gray-800">Manufacturing</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg card-hover text-center">
+                        <i class="fas fa-bullhorn text-3xl text-purple-600 mb-4"></i>
+                        <p class="font-semibold text-gray-800">Marketing</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg card-hover text-center">
+                        <i class="fas fa-users text-3xl text-indigo-600 mb-4"></i>
+                        <p class="font-semibold text-gray-800">HR</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section section-padding text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold mb-6">Client <span class="text-yellow-400">Testimonials</span></h3>
+                <p class="text-xl opacity-90 max-w-4xl mx-auto">Hear what our satisfied clients have to say about our services</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-effect rounded-2xl p-8 card-hover">
+                    <div class="flex text-yellow-400 mb-6">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="mb-6 italic text-lg">"WORKVIATECH ने मुझे एक junior role से senior management position में transition करने में मदद की। उनका career guidance अमूल्य था।"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-semibold">प्रि</span>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-white">प्रिया शर्मा (Priya Sharma)</h5>
+                            <p class="text-yellow-400 text-sm">Data Analyst</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-8 card-hover">
+                    <div class="flex text-yellow-400 mb-6">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="mb-6 italic text-lg">"HR director के रूप में, मैंने कई placement agencies के साथ काम किया है। WORKVIATECH हमारी जरूरतों को समझने में सर्वोत्तम है।"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-semibold">रा</span>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-white">राजेश कुमार (Rajesh Kumar)</h5>
+                            <p class="text-yellow-400 text-sm">Process Analyst</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-8 card-hover">
+                    <div class="flex text-yellow-400 mb-6">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="mb-6 italic text-lg">"WORKVIATECH की team ने न केवल मुझे बेहतरीन job दिलाई बल्कि interview preparation भी प्रदान की। मैं हर opportunity के लिए confident महसूस करती थी।"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-semibold">अनि</span>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-white">अनिता सिंह (Anita Singh)</h5>
+                            <p class="text-yellow-400 text-sm">Associate Engineer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section-padding">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Get In <span class="gradient-text">Touch</span></h3>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto">Ready to take the next step in your career journey? Contact us today for personalized assistance</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h4 class="text-3xl font-bold text-gray-800 mb-8">Contact Information</h4>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mr-6">
+                                <i class="fas fa-map-marker-alt text-white text-xl"></i>
                             </div>
                             <div>
-                                <h5 class="font-semibold text-gray-800 mb-1">Office Address</h5>
-                                <p class="text-gray-700">Muniraju Building<br>Near Shaneshwara temple<br>Ibbaluru Bengaluru 560103</p>
+                                <h5 class="text-xl font-semibold text-gray-800 mb-2">Office Address</h5>
+                                <p class="text-gray-600 text-lg">Muniraju Building<br>Near Shaneshwara temple<br>Ibbaluru Bengaluru<br>560103</p>
                             </div>
                         </div>
 
                         <div class="flex items-start">
-                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fas fa-phone text-green-600"></i>
+                            <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mr-6">
+                                <i class="fas fa-phone text-white text-xl"></i>
                             </div>
                             <div>
-                                <h5 class="font-semibold text-gray-800 mb-1">Phone Numbers</h5>
-                                <p class="text-gray-700">Main: +91 74837 02015<br>HR Services: +91 74837 02015</p>
+                                <h5 class="text-xl font-semibold text-gray-800 mb-2">Phone Number</h5>
+                                <a href="tel:+917483702015" class="text-gray-600 text-lg hover:text-blue-600">+91 74837 02015</a>
                             </div>
                         </div>
 
                         <div class="flex items-start">
-                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fas fa-envelope text-purple-600"></i>
+                            <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mr-6">
+                                <i class="fas fa-envelope text-white text-xl"></i>
                             </div>
                             <div>
-                                <h5 class="font-semibold text-gray-800 mb-1">Email Addresses</h5>
-                                <p class="text-gray-700">General: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fa9288ba8d9588918c939b8e9f9992d4999597">info@workviatech.com</a><br>Careers: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="036b7143746c7168756a627766606b2d606c6e">careers@workviatech.com</a><br>HR Services: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="98f0ead8eff7eaf3eef1f9ecfdfbf0b6fbf7f5">hr@workviatech.com</a></p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fas fa-clock text-red-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-gray-800 mb-1">Business Hours</h5>
-                                <p class="text-gray-700">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 2:00 PM<br>Sunday: Closed</p>
+                                <h5 class="text-xl font-semibold text-gray-800 mb-2">Email Address</h5>
+                                <a href="mailto:hr@workviatech.com" class="text-gray-600 text-lg hover:text-blue-600">hr@workviatech.com</a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="mt-8">
-                        <h5 class="font-semibold text-gray-800 mb-4">Follow Us</h5>
+                    <div class="mt-12">
+                        <h5 class="text-xl font-semibold text-gray-800 mb-6">Follow Us</h5>
                         <div class="flex space-x-4">
-                            <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition duration-300">
-                                <i class="fab fa-linkedin-in"></i>
+                            <a href="https://www.instagram.com/workviatech?igsh=NnAya3Q3Y295bm83" class="w-14 h-14 bg-gradient-to-r from-pink-500 to-red-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                <i class="fab fa-instagram text-xl"></i>
                             </a>
-                            <a href="#" class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition duration-300">
-                                <i class="fab fa-twitter"></i>
+                            <a href="https://wa.me/917483702015" class="w-14 h-14 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                <i class="fab fa-whatsapp text-xl"></i>
                             </a>
-                            <a href="#" class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center text-white hover:bg-blue-900 transition duration-300">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="https://www.instagram.com/workviatech?igsh=NnAya3Q3Y295bm83" target="_blank" class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center text-white hover:bg-pink-700 transition duration-300">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://wa.me/917483702015" target="_blank" class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white hover:bg-green-700 transition duration-300">
-                                <i class="fab fa-whatsapp"></i>
+                            <a href="#" class="w-14 h-14 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                <i class="fab fa-linkedin-in text-xl"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="card-hover rounded-xl shadow-lg p-8">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h4>
+                <div class="bg-white rounded-3xl shadow-2xl p-8">
+                    <h4 class="text-3xl font-bold text-gray-800 mb-8">Send Us a Message</h4>
                     
                     <form id="contactForm" class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-gray-700 font-medium mb-2">First Name</label>
-                                <input type="text" name="first_name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition duration-300" placeholder="Enter your first name">
+                                <label class="block text-gray-700 font-semibold mb-3 text-lg">First Name</label>
+                                <input type="text" id="firstName" class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:outline-none focus:border-blue-500 transition duration-300 text-lg" placeholder="Enter your first name">
                             </div>
                             <div>
-                                <label class="block text-gray-700 font-medium mb-2">Last Name</label>
-                                <input type="text" name="last_name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition duration-300" placeholder="Enter your last name">
+                                <label class="block text-gray-700 font-semibold mb-3 text-lg">Last Name</label>
+                                <input type="text" id="lastName" class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:outline-none focus:border-blue-500 transition duration-300 text-lg" placeholder="Enter your last name">
                             </div>
                         </div>
 
                         <div>
-                            <label class="block text-gray-700 font-medium mb-2">Email Address</label>
-                            <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition duration-300" placeholder="Enter your email address">
+                            <label class="block text-gray-700 font-semibold mb-3 text-lg">Email Address</label>
+                            <input type="email" id="email" class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:outline-none focus:border-blue-500 transition duration-300 text-lg" placeholder="Enter your email address">
                         </div>
 
                         <div>
-                            <label class="block text-gray-700 font-medium mb-2">Phone Number</label>
-                            <input type="tel" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition duration-300" placeholder="Enter your phone number">
+                            <label class="block text-gray-700 font-semibold mb-3 text-lg">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:outline-none focus:border-blue-500 transition duration-300 text-lg" placeholder="Enter your phone number">
                         </div>
 
                         <div>
-                            <label class="block text-gray-700 font-medium mb-2">Subject</label>
-                            <select name="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition duration-300">
-                                <option value="">Select a subject</option>
-                                <option value="I'm looking for a job">I'm looking for a job</option>
-                                <option value="I need to hire talent">I need to hire talent</option>
-                                <option value="Career consultation">Career consultation</option>
-                                <option value="Partnership inquiry">Partnership inquiry</option>
-                                <option value="Other">Other</option>
+                            <label class="block text-gray-700 font-semibold mb-3 text-lg">Subject</label>
+                            <select id="subject" class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:outline-none focus:border-blue-500 transition duration-300 text-lg">
+                                <option>I'm looking for a job</option>
+                                <option>I need to hire talent</option>
+                                <option>Career consultation</option>
+                                <option>Partnership inquiry</option>
+                                <option>Other</option>
                             </select>
                         </div>
 
                         <div>
-                            <label class="block text-gray-700 font-medium mb-2">Message</label>
-                            <textarea rows="4" name="message" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition duration-300" placeholder="Tell us more about your requirements"></textarea>
+                            <label class="block text-gray-700 font-semibold mb-3 text-lg">Message</label>
+                            <textarea rows="5" id="message" class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:outline-none focus:border-blue-500 transition duration-300 text-lg" placeholder="Tell us more about your requirements"></textarea>
                         </div>
 
-                        <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition duration-300">
-                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-purple-700 transition duration-300 transform hover:scale-105">
+                            <i class="fab fa-whatsapp mr-3"></i>Send via WhatsApp
                         </button>
-                        
-                        <div id="success-message" class="success-message">
-                            <i class="fas fa-check-circle mr-2"></i>Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
-                        </div>
-                        
-                        <div id="error-message" class="error-message">
-                            <i class="fas fa-exclamation-triangle mr-2"></i>Sorry, there was an error sending your message. Please try again or contact us directly.
-                        </div>
                     </form>
                 </div>
             </div>
@@ -611,88 +564,81 @@
     </section>
 
     <!-- Footer -->
-    <footer class="tech-bg-3 text-white section-padding">
+    <footer class="bg-gray-900 text-white section-padding">
         <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
                 <div>
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mr-3">
-                            <i class="fas fa-briefcase text-white"></i>
-                        </div>
-                        <h4 class="text-xl font-bold">WORKVIATECH</h4>
+                    <div class="logo-container mb-6">
+                        <img src="https://page.gensparksite.com/v1/base64_upload/a262228d5f12423121ea10d8c30c550b" alt="WORKVIATECH Logo" class="w-16 h-16">
+                        <h4 class="text-2xl font-bold">WORKVIATECH</h4>
                     </div>
-                    <p class="text-gray-300 mb-4">Your premier placement consultancy connecting talent with opportunity across diverse industries.</p>
+                    <p class="text-gray-400 mb-6 text-lg">Your premier placement consultancy connecting talent with opportunity across diverse industries.</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="https://www.instagram.com/workviatech?igsh=NnAya3Q3Y295bm83" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
                         </a>
-                        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
-                            <i class="fab fa-twitter"></i>
+                        <a href="https://wa.me/917483702015" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-whatsapp text-xl"></i>
                         </a>
-                        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://www.instagram.com/workviatech?igsh=NnAya3Q3Y295bm83" target="_blank" class="text-gray-300 hover:text-white transition duration-300">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://wa.me/917483702015" target="_blank" class="text-gray-300 hover:text-white transition duration-300">
-                            <i class="fab fa-whatsapp"></i>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in text-xl"></i>
                         </a>
                     </div>
                 </div>
 
                 <div>
-                    <h5 class="text-lg font-semibold mb-4">Quick Links</h5>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-300 hover:text-white transition duration-300">Home</a></li>
-                        <li><a href="#about" class="text-gray-300 hover:text-white transition duration-300">About Us</a></li>
-                        <li><a href="#services" class="text-gray-300 hover:text-white transition duration-300">Services</a></li>
-                        <li><a href="#testimonials" class="text-gray-300 hover:text-white transition duration-300">Testimonials</a></li>
-                        <li><a href="#contact" class="text-gray-300 hover:text-white transition duration-300">Contact</a></li>
+                    <h5 class="text-xl font-semibold mb-6">Quick Links</h5>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300 text-lg">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300 text-lg">About Us</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300 text-lg">Services</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition duration-300 text-lg">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300 text-lg">Contact</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h5 class="text-lg font-semibold mb-4">Services</h5>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Career Consultation</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Executive Search</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Bulk Hiring</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">HR Consulting</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Interview Preparation</a></li>
+                    <h5 class="text-xl font-semibold mb-6">Services</h5>
+                    <ul class="space-y-3">
+                        <li><a href="https://wa.me/917483702015?text=Hi, I need career consultation" class="text-gray-400 hover:text-white transition duration-300 text-lg">Career Consultation</a></li>
+                        <li><a href="https://wa.me/917483702015?text=Hi, I need executive search services" class="text-gray-400 hover:text-white transition duration-300 text-lg">Executive Search</a></li>
+                        <li><a href="https://wa.me/917483702015?text=Hi, I need bulk hiring services" class="text-gray-400 hover:text-white transition duration-300 text-lg">Bulk Hiring</a></li>
+                        <li><a href="https://wa.me/917483702015?text=Hi, I need HR consulting" class="text-gray-400 hover:text-white transition duration-300 text-lg">HR Consulting</a></li>
+                        <li><a href="https://wa.me/917483702015?text=Hi, I need interview preparation" class="text-gray-400 hover:text-white transition duration-300 text-lg">Interview Preparation</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h5 class="text-lg font-semibold mb-4">Contact Info</h5>
-                    <div class="space-y-2">
-                        <p class="text-gray-300">
-                            <i class="fas fa-map-marker-alt mr-2"></i>
+                    <h5 class="text-xl font-semibold mb-6">Contact Info</h5>
+                    <div class="space-y-4">
+                        <p class="text-gray-400 text-lg">
+                            <i class="fas fa-map-marker-alt mr-3"></i>
                             Muniraju Building, Near Shaneshwara temple, Ibbaluru Bengaluru 560103
                         </p>
-                        <p class="text-gray-300">
-                            <i class="fas fa-phone mr-2"></i>
-                            +91 74837 02015
+                        <p class="text-gray-400 text-lg">
+                            <i class="fas fa-phone mr-3"></i>
+                            <a href="tel:+917483702015" class="hover:text-white">+91 74837 02015</a>
                         </p>
-                        <p class="text-gray-300">
-                            <i class="fas fa-envelope mr-2"></i>
-                            <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="eb8399ab9c8499809d828a9f8e8883c5888486">hr@workviatech.com</a>
+                        <p class="text-gray-400 text-lg">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <a href="mailto:hr@workviatech.com" class="hover:text-white">hr@workviatech.com</a>
                         </p>
                     </div>
                 </div>
             </div>
 
-            <div class="border-t border-gray-600 pt-8 mt-8 text-center">
-                <p class="text-gray-300">&copy; 2024 WORKVIATECH. All rights reserved. | Privacy Policy | Terms of Service</p>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400 text-lg">&copy; 2024 WORKVIATECH. All rights reserved. | Privacy Policy | Terms of Service</p>
             </div>
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Initialize EmailJS
-        (function() {
-            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual EmailJS public key
-        })();
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -708,68 +654,70 @@
             });
         });
 
-        // Form submission handler
+        // Form submission to WhatsApp
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
-            submitBtn.disabled = true;
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
             
-            // Collect form data
-            const formData = {
-                first_name: this.first_name.value,
-                last_name: this.last_name.value,
-                email: this.email.value,
-                phone: this.phone.value,
-                subject: this.subject.value,
-                message: this.message.value
-            };
+            const whatsappMessage = *WORKVIATECH Contact Form*\n\n*Name:* ${firstName} ${lastName}\n*Email:* ${email}\n*Phone:* ${phone}\n*Subject:* ${subject}\n*Message:* ${message};
             
-            // Send email using EmailJS
-            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
-                .then(function(response) {
-                    document.getElementById('success-message').style.display = 'block';
-                    document.getElementById('error-message').style.display = 'none';
-                    document.getElementById('contactForm').reset();
-                }, function(error) {
-                    document.getElementById('error-message').style.display = 'block';
-                    document.getElementById('success-message').style.display = 'none';
-                })
-                .finally(function() {
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                    
-                    // Hide messages after 5 seconds
-                    setTimeout(function() {
-                        document.getElementById('success-message').style.display = 'none';
-                        document.getElementById('error-message').style.display = 'none';
-                    }, 5000);
-                });
+            const whatsappURL = https://wa.me/917483702015?text=${encodeURIComponent(whatsappMessage)};
+            window.open(whatsappURL, '_blank');
         });
 
-        // Add animation on scroll
+        // Animate counters on scroll
         const observerOptions = {
-            threshold: 0.1,
+            threshold: 0.5,
             rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    const counter = entry.target;
+                    const target = parseInt(counter.textContent.replace('+', ''));
+                    let current = 0;
+                    const increment = target / 100;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            counter.textContent = target + '+';
+                            clearInterval(timer);
+                        } else {
+                            counter.textContent = Math.floor(current) + '+';
+                        }
+                    }, 20);
                 }
             });
         }, observerOptions);
 
-        // Observe all cards and sections for animation
-        document.querySelectorAll('.card-hover, section').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
+        // Observe all counter elements
+        document.querySelectorAll('.stats-counter').forEach(counter => {
+            observer.observe(counter);
+        });
+
+        // Add scroll animations
+        const scrollObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            scrollObserver.observe(card);
         });
     </script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"96d78c0caf878337","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.7.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
+</body>
+</html>
